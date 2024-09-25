@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <title>{{ title }}</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Mulish', sans-serif;
+        }
+
+        html {
+            background-color: #adb5bd;
+        }
+
+        body {
+            padding: 30px;
+            margin: 0 auto;
+            max-width: 600px;
+            background-color: #adb5bd;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 45px;
+            border-radius: 10px;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+
+        }
+
+        .header {
+            margin: 0 auto 15px;
+            padding: 0;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        button {
+            background-color: rgb(188, 0, 23);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/submit" method="post" id="probeForm">
+        <div class="header">
+            <h1>{{ title }}</h1>
+        </div>
+        {{ form }}
+        <button type="submit" class="{{ submit.css }}"> {{ submit.title }} </button>
+    </form>
+</body>
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById('probeForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const jsonData = {};
+        formData.forEach((value, key) => {
+            jsonData[key] = value;
+        });
+
+        fetch('/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonData)
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Formulario enviado exitosamente');
+                } else {
+                    alert('Error al enviar el formulario: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error al enviar el formulario');
+            });
+    });
+</script>
+
+</html>

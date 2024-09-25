@@ -1,0 +1,203 @@
+{
+    "author": "Nicolas Garcia",
+    "description": "Module to generate offline forms and send the information to Rocketbot",
+    "description_lang": {
+        "es": "Módulo para generar formularios offline y enviar la información a Rocketbot",
+        "en": "Module to generate offline forms and send the information to Rocketbot",
+        "pr": "Módulo para gerar formulários offline e enviar as informações para Rocketbot"
+    },
+    "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
+    "version": "1.1.0",
+    "license": "MIT",
+    "homepage": "http://rocketbot.com",
+    "linux": true,
+    "windows": true,
+    "mac": true,
+    "docker": true,
+    "name": "ProbeForms",
+    "dependencies": {
+        "requests": "2.32.3"
+    },
+    "title": {
+        "en": "ProbeForms",
+        "es": "ProbeForms",
+        "pr": "ProbeForms"
+    },
+    "icon": "data:image/png;base64,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",
+    "children": [
+        {
+            "es": {
+                "title": "Ejecutar ProbeForms",
+                "description": "Este comando permite ejecutar el servicio de ProbeForms."
+            },
+            "en": {
+                "title": "Run ProbeForms",
+                "description": "This command allows you to run the ProbeForms service."
+            },
+            "pr": {
+                "title": "Executar ProbeForms",
+                "description": "Este comando permite executar o serviço de ProbeForms."
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": "4321",
+                        "title": {
+                            "es": "Puerto:",
+                            "en": "Port:",
+                            "pr": "Porta:"
+                        },
+                        "description": {
+                            "es": "Puerto en el que se ejecutará el servicio de ProbeForms",
+                            "en": "Port where the ProbeForms service will run",
+                            "pr": "Porta onde o serviço ProbeForms será executado"
+                        },
+                        "id": "port",
+                        "css": "col-md-6",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "run_probeforms",
+            "module_name": "ProbeForms",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        },
+        {
+            "es": {
+                "title": "Esperar submit",
+                "description": "Este comando permite esperar a que se envíe un formulario de ProbeForms."
+            },
+            "en": {
+                "title": "Wait submit",
+                "description": "This command allows you to wait for a ProbeForms form to be submitted."
+            },
+            "pr": {
+                "title": "Aguardar envio",
+                "description": "Este comando permite aguardar um formulário de ProbeForms ser enviado."
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": "3600",
+                        "title": {
+                            "es": "Tiempo de espera máximo (segundos):",
+                            "en": "Maximum waiting time (seconds):",
+                            "pr": "Tempo máximo de espera (segundos):"
+                        },
+                        "description": {
+                            "es": "Tiempo máximo que esperará el robot por un mensaje",
+                            "en": "Maximum time the robot will wait for a message",
+                            "pr": "Tempo máximo que o robô aguardará por uma mensagem"
+                        },
+                        "id": "timeout",
+                        "css": "col-md-6",
+                        "data_type": "int",
+                        "default": null,
+                        "required": true
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "4321",
+                        "title": {
+                            "es": "Puerto:",
+                            "en": "Port:",
+                            "pr": "Porta:"
+                        },
+                        "description": {
+                            "es": "Puerto en el que se ejecutará el servicio de ProbeForms",
+                            "en": "Port where the ProbeForms service will run",
+                            "pr": "Porta onde o serviço ProbeForms será executado"
+                        },
+                        "id": "port",
+                        "css": "col-md-6",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": "variable",
+                        "title": {
+                            "es": "Asignar resultado a variable:",
+                            "en": "Assign result to variable:",
+                            "pr": "Atribuir resultado à variável:"
+                        },
+                        "description": {
+                            "es": "Nombre de la variable de tu robot que guardará el resultado del formulario",
+                            "en": "Name of the variable of your robot that will store the result of the form",
+                            "pr": "Nome da variável do seu robô que armazenará o resultado do formulário"
+                        },
+                        "help": {
+                            "es": "Nombre de variable sin {}",
+                            "en": "Variable name without {}",
+                            "pr": "Nome da variável em chaves {}"
+                        },
+                        "id": "result",
+                        "remove_vars": true,
+                        "css": "col-md-6",
+                        "data_type": "str",
+                        "default": null,
+                        "required": true
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "wait_message",
+            "module_name": "ProbeForms",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        },
+        {
+            "es": {
+                "title": "Cerrar ProbeForms",
+                "description": "Este comando permite cerrar el servicio de ProbeForms."
+            },
+            "en": {
+                "title": "Close ProbeForms",
+                "description": "This command allows you to close the ProbeForms service."
+            },
+            "pr": {
+                "title": "Fechar ProbeForms",
+                "description": "Este comando permite fechar o serviço de ProbeForms."
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": []
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "close_probeforms",
+            "module_name": "ProbeForms",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        }
+    ]
+}
