@@ -4,7 +4,7 @@ Módulo para gerar formulários offline e enviar as informações para Rocketbot
 
 *Read this in other languages: [English](Manual_ProbeForms.md), [Português](Manual_ProbeForms.pr.md), [Español](Manual_ProbeForms.es.md)*
   
-![banner](imgs/Banner_ProbeForms.png o jpg)
+![banner](imgs/Banner_ProbeForms.jpg)
 ## Como instalar este módulo
   
 Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
@@ -25,12 +25,12 @@ Existem dois métodos para editar os campos do formulário.
 
 #### Método 1 (Recomendado)
 
-Dentro da pasta do módulo, em `libs/bin/_internal/static/`, você encontrará o arquivo index.html, que apresenta o formulário visualmente. Este arquivo permite que você edite diretamente o conteúdo dentro da tag `<form action="/submit" method="post" id="probeForm">`, onde você pode personalizar os campos de acordo com suas necessidades. As informações são enviadas para o endpoint correspondente através da tag `<script>`. Recomenda-se não modificar este script para garantir que os dados sejam enviados corretamente.
+Dentro da pasta do módulo, em `libs/bin/_internal/static/`, você encontrará o arquivo index.html, que apresenta o formulário visualmente. Este arquivo permite que você edite diretamente o conteúdo dentro da tag `<form action="/submit" method="post" id="probeForm">`, onde você pode personalizar os campos de acordo com suas necessidades. As informações são enviadas para o endpoint correspondente através da tag `<script>`. Recomenda-se não modificar este script para garantir que os dados sejam enviados corretamente. Dentro da tag `<script>` também estão as funções que são 
+executadas no serviço ProbeForms para obter o caminho de arquivos e pastas. Recomenda-se não modificá-las para garantir o correto funcionamento do módulo.
 
 #### Método 2
 
-Alternativamente, você pode criar um 
-arquivo forms.json na mesma pasta `libs/bin/_internal/static/`. Este arquivo permite definir os campos do formulário seguindo uma estrutura predefinida.
+Alternativamente, você pode criar um arquivo forms.json na mesma pasta `libs/bin/_internal/static/`. Este arquivo permite definir os campos do formulário seguindo uma estrutura predefinida.
 
 ##### Estrutura do form.json
 
@@ -61,8 +61,7 @@ O arquivo form.json é processado pelo ProbeForms para gerar um formulário HTML
 
 ##### Detalhes dos campos do formulário
 
-- 
-**title**: Título do formulário
+- **title**: Título do formulário
 
 - **inputs**: As diferentes entradas de informação que o usuário poderá preencher. As opções disponíveis e seus diferentes campos são os seguintes:
     - **type**: Indica o tipo de entrada a ser usada no formulário. Opções disponíveis: label, input, select, select, checkbox, textarea, radio
@@ -75,7 +74,6 @@ O arquivo form.json é processado pelo ProbeForms para gerar um formulário HTML
 
 - **submit**: Esta seção permite modificar o texto e o estilo do botão que envia o formulário. As opções disponíveis são as seguintes:
     - **title**: Texto que o botão terá.
-
     - **css**: Classes css do Bootstrap que darão o estilo desejado ao botão.
 
 > 💡 **Nota**: Se um arquivo `form.json` for usado para gerar o formulário, o conteúdo do arquivo `index.html` será substituído em cada execução do módulo. É recomendável salvar uma cópia de `index.html` se os testes estiverem em andamento.
@@ -86,7 +84,8 @@ Uma vez definido o arquivo form.json, o formulário pode ser gerado e exibido ex
 
 #### Recebimento de dados
 
-Quando o formulário é enviado, os dados serão armazenados na memória enquanto o ProbeForms estiver em execução. Esses dados podem ser recuperados usando o comando Aguardar por Mensagem em um modelo FIFO (First In First Out). Se não houver dados disponíveis em uma solicitação GET, a solicitação permanecerá pendente até que os dados sejam concluídos ou o tempo limite definido seja atingido.
+Quando o formulário é enviado, os dados serão armazenados na memória enquanto o ProbeForms estiver em execução. Esses dados podem ser recuperados usando o comando Aguardar por Mensagem em um modelo FIFO (First In First Out). Se não 
+houver dados disponíveis em uma solicitação GET, a solicitação permanecerá pendente até que os dados sejam concluídos ou o tempo limite definido seja atingido.
 ## Descrição do comando
 
 ### Executar ProbeForms
@@ -96,9 +95,9 @@ Este comando permite executar o serviço de ProbeForms.
 | --- | --- | --- |
 |Porta|Porta onde o serviço ProbeForms será executado|4321|
 
-### Aguardar mensagem
+### Aguardar envio
   
-Este comando permite aguardar uma mensagem do ProbeForms.
+Este comando permite aguardar um formulário de ProbeForms ser enviado.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Tempo máximo de espera (segundos)|Tempo máximo que o robô aguardará por uma mensagem|3600|
