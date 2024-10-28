@@ -4,7 +4,7 @@ Módulo para generar formularios offline y enviar la información a Rocketbot
 
 *Read this in other languages: [English](Manual_ProbeForms.md), [Português](Manual_ProbeForms.pr.md), [Español](Manual_ProbeForms.es.md)*
   
-![banner](imgs/Banner_ProbeForms.png o jpg)
+![banner](imgs/Banner_ProbeForms.jpg)
 ## Como instalar este módulo
   
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
@@ -26,9 +26,10 @@ Existen dos métodos para editar los campos del formulario.
 #### Método 1 (Recomendado)
 
 Dentro de la carpeta del módulo, en `libs/bin/_internal/static/` encontrarás el archivo index.html, que presenta el formulario de forma visual. Este archivo te permite editar directamente el contenido dentro de la etiqueta `<form action="/submit" method="post" id="probeForm">`, donde podrás personalizar los campos según tus necesidades. La información es enviada al endpoint correspondiente a través de la etiqueta `<script>`. Se recomienda no modificar este script para asegurar que los datos sean enviados correctamente.
+Dentro de la etiqueta 
+`<script>` también se encuentran las funciones que se ejecutan en el servicio de ProbeForms para obtener la ruta de archivos y carpetas. Se recomienda no modificarlas para asegurar el correcto funcionamiento del módulo.
 
 #### Método 2
-
 
 Alternativamente, puedes crear un archivo forms.json en la misma carpeta `libs/bin/_internal/static/`. Este archivo te permite definir los campos del formulario siguiendo una estructura predefinida.
 
@@ -57,8 +58,8 @@ Para generar un formulario correctamente a partir de un archivo form.json, es ne
 }
 ```
 
-El archivo form.json es procesado por ProbeForms para generar un formulario HTML en el archivo index.html. Los campos del formulario se definen en el array `inputs`, donde cada objeto representa un campo. El objeto `submit` define el 
-botón de envío.
+
+El archivo form.json es procesado por ProbeForms para generar un formulario HTML en el archivo index.html. Los campos del formulario se definen en el array `inputs`, donde cada objeto representa un campo. El objeto `submit` define el botón de envío.
 
 ##### Detalles de los campos del formulario
 
@@ -73,8 +74,7 @@ botón de envío.
     - **css**: Clases css de Bootstrap que tendrá el input.
     - **required**: Indica si el input es requerido. Por defecto false
 
-- **submit**: Esta sección permite modificar el texto y estilo del botón que envía el formulario.
- Las opciones disponibles son las siguientes:
+- **submit**: Esta sección permite modificar el texto y estilo del botón que envía el formulario. Las opciones disponibles son las siguientes:
     - **title**: Texto que tendrá el botón.
     - **css**: Clases css de Bootstrap que darán el estilo deseado al botón.
 
@@ -86,8 +86,7 @@ Una vez definido el archivo form.json, el formulario puede ser generado y mostra
 
 #### Recepción de datos
 
-Cuando el formulario es enviado, los datos serán almacenados en memoria mientras ProbeForms se encuentra en ejecución. Estos datos pueden ser recuperados utilizando el comando Esperar por Mensaje en un modelo FIFO (First In First Out). Si no hay datos disponibles en una petición GET, la petición permanecerá 
-pendiente hasta que los datos estén completos o se alcance el timeout definido.
+Cuando el formulario es enviado, los datos serán almacenados en memoria mientras ProbeForms se encuentra en ejecución. Estos datos pueden ser recuperados utilizando el comando Esperar por Mensaje en un modelo FIFO (First In First Out). Si no hay datos disponibles en una petición GET, la petición permanecerá pendiente hasta que los datos estén completos o se alcance el timeout definido.
 
 
 ## Descripción de los comandos
@@ -99,9 +98,9 @@ Este comando permite ejecutar el servicio de ProbeForms.
 | --- | --- | --- |
 |Puerto|Puerto en el que se ejecutará el servicio de ProbeForms|4321|
 
-### Esperar mensaje
+### Esperar submit
   
-Este comando permite esperar un mensaje de ProbeForms.
+Este comando permite esperar a que se envíe un formulario de ProbeForms.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Tiempo de espera máximo (segundos)|Tiempo máximo que esperará el robot por un mensaje|3600|

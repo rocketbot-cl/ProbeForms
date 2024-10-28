@@ -11,7 +11,7 @@ There are two methods for editing the form fields.
 
 #### Method 1 (Recommended)
 
-Inside the module folder, in `libs/bin/_internal/static/` you will find the index.html file, which presents the form visually. This file allows you to directly edit the content inside the `<form action="/submit" method="post" id="probeForm">` tag, where you can customize the fields according to your needs. The information is sent to the corresponding endpoint through the `<script>` tag. It is recommended that you do not modify this script to ensure that the data is sent correctly.
+Inside the module folder, in `libs/bin/_internal/static/` you will find the index.html file, which presents the form visually. This file allows you to directly edit the content inside the `<form action="/submit" method="post" id="probeForm">` tag, where you can customize the fields according to your needs. The information is sent to the corresponding endpoint through the `<script>` tag. It is recommended that you do not modify this script to ensure that the data is sent correctly. Inside the `<script>` tag are also the functions that run in the ProbeForms service to get the path of files and folders. It is recommended that you do not modify them to ensure the correct operation of the module.
 
 #### Method 2
 
@@ -86,6 +86,7 @@ Existen dos métodos para editar los campos del formulario.
 #### Método 1 (Recomendado)
 
 Dentro de la carpeta del módulo, en `libs/bin/_internal/static/` encontrarás el archivo index.html, que presenta el formulario de forma visual. Este archivo te permite editar directamente el contenido dentro de la etiqueta `<form action="/submit" method="post" id="probeForm">`, donde podrás personalizar los campos según tus necesidades. La información es enviada al endpoint correspondiente a través de la etiqueta `<script>`. Se recomienda no modificar este script para asegurar que los datos sean enviados correctamente.
+Dentro de la etiqueta `<script>` también se encuentran las funciones que se ejecutan en el servicio de ProbeForms para obtener la ruta de archivos y carpetas. Se recomienda no modificarlas para asegurar el correcto funcionamiento del módulo.
 
 #### Método 2
 
@@ -159,7 +160,7 @@ Existem dois métodos para editar os campos do formulário.
 
 #### Método 1 (Recomendado)
 
-Dentro da pasta do módulo, em `libs/bin/_internal/static/`, você encontrará o arquivo index.html, que apresenta o formulário visualmente. Este arquivo permite que você edite diretamente o conteúdo dentro da tag `<form action="/submit" method="post" id="probeForm">`, onde você pode personalizar os campos de acordo com suas necessidades. As informações são enviadas para o endpoint correspondente através da tag `<script>`. Recomenda-se não modificar este script para garantir que os dados sejam enviados corretamente.
+Dentro da pasta do módulo, em `libs/bin/_internal/static/`, você encontrará o arquivo index.html, que apresenta o formulário visualmente. Este arquivo permite que você edite diretamente o conteúdo dentro da tag `<form action="/submit" method="post" id="probeForm">`, onde você pode personalizar os campos de acordo com suas necessidades. As informações são enviadas para o endpoint correspondente através da tag `<script>`. Recomenda-se não modificar este script para garantir que os dados sejam enviados corretamente. Dentro da tag `<script>` também estão as funções que são executadas no serviço ProbeForms para obter o caminho de arquivos e pastas. Recomenda-se não modificá-las para garantir o correto funcionamento do módulo.
 
 #### Método 2
 

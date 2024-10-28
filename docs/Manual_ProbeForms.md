@@ -4,7 +4,7 @@ Module to generate offline forms and send the information to Rocketbot
 
 *Read this in other languages: [English](Manual_ProbeForms.md), [Português](Manual_ProbeForms.pr.md), [Español](Manual_ProbeForms.es.md)*
   
-![banner](imgs/Banner_ProbeForms.png o jpg)
+![banner](imgs/Banner_ProbeForms.jpg)
 ## How to install this module
   
 To install the module in Rocketbot Studio, it can be done in two ways:
@@ -24,12 +24,12 @@ There are two methods for editing the form fields.
 
 #### Method 1 (Recommended)
 
-Inside the module folder, in `libs/bin/_internal/static/` you will find the index.html file, which presents the form visually. This file allows you to directly edit the content inside the `<form action="/submit" method="post" id="probeForm">` tag, where you can customize the fields according to your needs. The information is sent to the corresponding endpoint through the `<script>` tag. It is recommended that you do not modify this script to ensure that the data is sent correctly.
+Inside the module folder, in `libs/bin/_internal/static/` you will find the index.html file, which presents the form visually. This file allows you to directly edit the content inside the `<form action="/submit" method="post" id="probeForm">` tag, where you can customize the fields according to your needs. The information is sent to the corresponding endpoint through the `<script>` tag. It is recommended that you do not modify this script to ensure that the data is sent correctly. Inside the `<script>` tag are also the functions that run in the ProbeForms service to get the path of 
+files and folders. It is recommended that you do not modify them to ensure the correct operation of the module.
 
 #### Method 2
 
-Alternatively, you can create a forms.json file in the same 
-`libs/bin/_internal/static/` folder. This file allows you to define the form fields following a predefined structure.
+Alternatively, you can create a forms.json file in the same `libs/bin/_internal/static/` folder. This file allows you to define the form fields following a predefined structure.
 
 ##### Structure of form.json
 
@@ -62,8 +62,7 @@ The form.json file is processed by ProbeForms to generate an HTML form in the in
 
 - **title**: Title of the form
 
-- **inputs**: The different information inputs 
-that the user will be able to complete. The available options and their different fields are the following:
+- **inputs**: The different information inputs that the user will be able to complete. The available options and their different fields are the following:
   - **type**: Indicates the type of input to be used in the form. Available options: label, input, select, select, checkbox, textarea, radio
   - **title**: Title of the input.
   - **id**: Unique identifier of the input. It must not be duplicated since it corresponds to the key of the json in the returned result.
@@ -74,8 +73,7 @@ that the user will be able to complete. The available options and their differen
 
 - **submit**: This section allows you to modify the text and style of the button that submits the form. The available options are the following:
   - **title**: Text that the button will have.
-  - **css**: Bootstrap css classes that will give the desired 
-style to the button.
+  - **css**: Bootstrap css classes that will give the desired style to the button.
 
 > 💡 **Note**: If a `form.json` file is used to generate the form, the content of the `index.html` file will be replaced at each module execution. It is recommended to save a copy of `index.html` if testing is in progress.
 
@@ -97,9 +95,9 @@ This command allows you to run the ProbeForms service.
 | --- | --- | --- |
 |Port|Port where the ProbeForms service will run|4321|
 
-### Wait for message
+### Wait submit
   
-This command allows you to wait for a message from ProbeForms.
+This command allows you to wait for a ProbeForms form to be submitted.
 |Parameters|Description|example|
 | --- | --- | --- |
 |Maximum waiting time (seconds)|Maximum time the robot will wait for a message|3600|

@@ -1,3 +1,7 @@
+
+
+
+
 # ProbeForms
   
 Módulo para generar formularios offline y enviar la información a Rocketbot  
@@ -17,8 +21,8 @@ Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
 1. Ejecutar ProbeForms  
 Este comando permite ejecutar el servicio de ProbeForms.
 
-2. Esperar mensaje  
-Este comando permite esperar un mensaje de ProbeForms.
+2. Esperar submit  
+Este comando permite esperar a que se envíe un formulario de ProbeForms.
 
 3. Cerrar ProbeForms  
 Este comando permite cerrar el servicio de ProbeForms.  
@@ -30,9 +34,6 @@ Este comando permite cerrar el servicio de ProbeForms.
 ### OS
 
 - windows
-- mac
-- linux
-- docker
 
 ### Dependencies
 - [**requests**](https://pypi.org/project/requests/)
